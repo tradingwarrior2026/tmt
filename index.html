@@ -106,6 +106,50 @@
         .service-card { text-align: center; padding: 1.6rem; background: #f8f9fa; border-radius: 12px; }
         .service-card h3 { color: #1e3c72; margin-bottom: 0.6rem; }
 
+        /* New: Courses Section */
+        .courses-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem;
+            padding: 0 10px 10px;
+        }
+        .course-card {
+            background: #f9fbff; border-radius: 12px; padding: 1.6rem; text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05); transition: transform 0.25s ease;
+            border-left: 4px solid #ff6b35;
+        }
+        .course-card:hover { transform: translateY(-4px); }
+        .course-card h3 { color: #1e3c72; margin-bottom: 0.8rem; font-size: 1.2rem; }
+        .course-card .price { font-size: 1.3rem; color: #ff6b35; font-weight: bold; margin: 0.5rem 0; }
+        .course-card ul { list-style: none; text-align: left; margin-top: 1rem; }
+        .course-card li { color: #4d5b6a; margin: 0.4rem 0; padding-left: 1rem; position: relative; }
+        .course-card li::before { content: '✓'; position: absolute; left: 0; color: #ff6b35; font-weight: bold; }
+
+        /* New: Testimonials Section */
+        .testimonials-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.6rem;
+            padding: 0 10px 10px;
+        }
+        .testimonial-card {
+            background: #f8f9fa; border-radius: 12px; padding: 1.8rem; text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05); position: relative;
+            font-style: italic; color: #4d5b6a;
+        }
+        .testimonial-card::before {
+            content: '"'; font-size: 4rem; color: #ff6b35; position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+        }
+        .testimonial-card .student-name { margin-top: 1rem; font-style: normal; font-weight: 600; color: #1e3c72; }
+        .testimonial-card .stars { color: #ffd166; margin-top: 0.5rem; font-size: 1.2rem; }
+
+        /* New: Trading Rules Section */
+        .rules-list {
+            max-width: 800px; margin: 0 auto; list-style: none;
+        }
+        .rules-list li {
+            background: #f9fbff; margin: 1rem 0; padding: 1.2rem; border-radius: 8px;
+            border-left: 4px solid #1e3c72; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .rules-list li strong { color: #1e3c72; display: block; margin-bottom: 0.5rem; }
+        .rules-list li p { color: #4d5b6a; }
+
         /* Contact */
         .contact-ways { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 900px; margin: 0 auto; }
         .contact-card { background: #fff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); padding: 16px 18px; }
@@ -133,6 +177,7 @@
             .hero h1 { font-size: 1.9rem; }
             .logo { font-size: 1.4rem; } /* Adjusted font-size for mobile balance */
             .logo img { width: 60px; height: 60px; } /* Scaled down but still prominent on mobile */
+            .courses-grid, .testimonials-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -157,7 +202,10 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
                 <li><a href="#insights">Insights</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#rules">Rules</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -170,7 +218,7 @@
         <div class="container">
             <h1>Unlock the Magic of Trading</h1>
             <p>Central India’s Leading Trading Academy. Founded by <a href="https://www.instagram.com/ohhh_yassshhh/" target="_blank" rel="noopener" style="color:#ffd166; font-weight:700;">@ohhh_yassshhh</a>. Curated insights and education sourced from our Instagram community <a href="https://www.instagram.com/thoughtsmagictrading/?hl=en" target="_blank" rel="noopener" style="color:#ffd166; font-weight:700;">@thoughtsmagictrading</a>.</p>
-            <a href="#insights" class="cta-button">Explore Trading Insights</a>
+            <a href="#courses" class="cta-button">Enroll in Courses</a>
             <div class="hero-kicker">📞 <a href="tel:+918669665071" style="color:#fff;text-decoration:underline;">8669665071</a> | <a href="tel:+919922335767" style="color:#fff;text-decoration:underline;">9922335767</a> | <a href="tel:+918669665070" style="color:#fff;text-decoration:underline;">8669665070</a> | <a href="tel:+917020010598" style="color:#fff;text-decoration:underline;">7020010598</a></div>
         </div>
     </section>
@@ -184,11 +232,57 @@
         </div>
     </section>
 
+    <!-- New: Courses Section -->
+    <section id="courses" class="courses cardish">
+        <div class="container">
+            <h2>Our Trading Courses</h2>
+            <p style="text-align: center; margin-bottom: 1.2rem; color: #576074;">From beginner to advanced, our premium courses teach what trading is and guide you to become a successful trader. Basic to Advance Premium Course available now.</p>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <h3>Basic Trading Course</h3>
+                    <div class="price">₹5,999</div>
+                    <p>Ideal for beginners: Learn fundamentals, chart reading, and basic strategies to understand trading.</p>
+                    <ul>
+                        <li>Introduction to Forex Markets</li>
+                        <li>Technical Analysis Basics</li>
+                        <li>Risk Management Essentials</li>
+                        <li>Live Demo Sessions</li>
+                    </ul>
+                    <a href="#contact" class="cta-button" style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1rem;">Enroll Now</a>
+                </div>
+                <div class="course-card">
+                    <h3>Advanced Trading Course</h3>
+                    <div class="price">₹12,999</div>
+                    <p>For intermediate traders: Dive into advanced strategies, psychology, and automation to build trading success.</p>
+                    <ul>
+                        <li>Advanced Technical Indicators</li>
+                        <li>Trading Psychology & Discipline</li>
+                        <li>Options & Futures Strategies</li>
+                        <li>Backtesting & Optimization</li>
+                    </ul>
+                    <a href="#contact" class="cta-button" style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1rem;">Enroll Now</a>
+                </div>
+                <div class="course-card">
+                    <h3>Premium Mastery Program</h3>
+                    <div class="price">₹24,999</div>
+                    <p>Complete package: All courses + lifetime access and 1:1 mentoring to ensure your trading success.</p>
+                    <ul>
+                        <li>Full Basic to Advance Curriculum</li>
+                        <li>Ongoing Education & Support</li>
+                        <li>Private Community Access</li>
+                        <li>Webinars & Mentorship</li>
+                    </ul>
+                    <a href="#contact" class="cta-button" style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1rem;">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Insights Section - Content from Instagram -->
     <section id="insights" class="insights cardish">
         <div class="container">
             <h2>Trading Insights from @thoughtsmagictrading</h2>
-            <p style="text-align: center; margin-bottom: 1.2rem; color: #576074;">Curated tips, signals, and motivational content straight from our Instagram feed. Follow <a href="https://www.instagram.com/thoughtsmagictrading/?hl=en" target="_blank" style="color: #1e3c72; font-weight:700;">@thoughtsmagictrading</a> for daily updates.</p>
+            <p style="text-align: center; margin-bottom: 1.2rem; color: #576074;">Curated educational content, motivational insights, and trading knowledge straight from our Instagram feed. Follow <a href="https://www.instagram.com/thoughtsmagictrading/?hl=en" target="_blank" style="color: #1e3c72; font-weight:700;">@thoughtsmagictrading</a> for daily updates.</p>
 
             <div class="insights-grid">
                 <!-- Example Cards (replace with your images/text if desired) -->
@@ -203,9 +297,9 @@
                     <p>“Thoughts become things.” Train your focus and patience to spot higher‑probability setups.</p>
                 </div>
                 <div class="insight-card">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23e3f2fd'/><text x='150' y='100' font-size='15' text-anchor='middle' fill='%231e3c72'>EUR/USD bullish bias</text></svg>" alt="Market Signal Example">
-                    <h3>Live Market Signals</h3>
-                    <p>Example: EUR/USD bullish momentum with clear risk parameters. See our IG posts for real‑time updates.</p>
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23e3f2fd'/><text x='150' y='100' font-size='15' text-anchor='middle' fill='%231e3c72'>Market Analysis Example</text></svg>" alt="Market Analysis Example">
+                    <h3>Market Analysis Examples</h3>
+                    <p>Example: Understanding EUR/USD momentum with clear risk parameters. See our IG posts for educational breakdowns.</p>
                 </div>
             </div>
 
@@ -224,14 +318,73 @@
         </div>
     </section>
 
+    <!-- New: Testimonials Section -->
+    <section id="testimonials" class="testimonials cardish">
+        <div class="container">
+            <h2>What Our Students Say</h2>
+            <p style="text-align: center; margin-bottom: 1.2rem; color: #576074;">Hear from students who transformed their trading journey with TMT courses and guidance.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"The Basic Course gave me a solid foundation. Now I'm consistently profitable thanks to the risk rules I learned!"</p>
+                    <div class="student-name">Ravi K., Nagpur</div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Advanced strategies from TMT changed everything. The mindset training helped me stay disciplined during volatile markets."</p>
+                    <div class="student-name">Priya S., Indore</div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Premium Program is worth every penny. Lifetime access and community support make trading feel magical!"</p>
+                    <div class="student-name">Amit M., Bhopal</div>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New: Trading Rules Section -->
+    <section id="rules" class="rules cardish">
+        <div class="container">
+            <h2>Our Trading Rules</h2>
+            <p style="text-align: center; margin-bottom: 1.2rem; color: #576074;">Follow these proven rules to trade like a professional. Emphasized in all our courses.</p>
+            <ul class="rules-list">
+                <li>
+                    <strong>Rule 1: Risk Only 1% Per Trade</strong>
+                    <p>Never risk more than 1% of your capital on a single trade to protect your account from drawdowns.</p>
+                </li>
+                <li>
+                    <strong>Rule 2: Plan Your Trade and Trade Your Plan</strong>
+                    <p>Define entry, exit, stop-loss, and take-profit before entering. Stick to it—no emotions.</p>
+                </li>
+                <li>
+                    <strong>Rule 3: Master Your Mindset</strong>
+                    <p>Trading is 80% psychology. Control fear and greed; focus on process over profits.</p>
+                </li>
+                <li>
+                    <strong>Rule 4: Use Stop-Losses Always</strong>
+                    <p>Protect against unexpected moves. No trade without a predefined exit strategy.</p>
+                </li>
+                <li>
+                    <strong>Rule 5: Backtest Before Live Trading</strong>
+                    <p>Test strategies on historical data. Only deploy what has proven edge.</p>
+                </li>
+                <li>
+                    <strong>Rule 6: Keep a Trading Journal</strong>
+                    <p>Log every trade, reasons, and outcomes. Review weekly to improve.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
     <!-- Services Section -->
     <section id="services" class="services cardish">
         <div class="container">
             <h2>Our Trading Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Forex Signals</h3>
-                    <p>Buy/sell alerts with defined entries, stops, and targets. Shared via our Instagram and private channels.</p>
+                    <h3>Forex Education</h3>
+                    <p>Comprehensive lessons on forex markets, including structure and analysis, to build your trading knowledge.</p>
                 </div>
                 <div class="service-card">
                     <h3>Education & Webinars</h3>
@@ -285,7 +438,10 @@
             <div class="footer-links" aria-label="Footer navigation">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
+                <a href="#courses">Courses</a>
                 <a href="#insights">Insights</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#rules">Rules</a>
                 <a href="#services">Services</a>
                 <a href="#contact">Contact</a>
             </div>
