@@ -44,13 +44,13 @@
         header {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            padding: 1rem 0;
+            padding: 1.5rem 0; /* Increased padding for larger logo space */
             position: sticky; top: 0; z-index: 100;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.3px; display: flex; align-items: center; gap: 10px; }
-        .logo img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+        .logo { font-size: 1.6rem; font-weight: 700; letter-spacing: 0.3px; display: flex; align-items: center; gap: 12px; } /* Increased font-size for balance */
+        .logo img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; } /* Made logo larger */
         .badge { background: rgba(255,255,255,0.15); padding: 2px 8px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; }
         .nav-links { display: flex; list-style: none; gap: 2rem; }
         .nav-links a { color: white; text-decoration: none; transition: opacity 0.3s; }
@@ -131,8 +131,8 @@
             .nav-links { display: none; }
             .mobile-menu { display: block; background: #2a5298; padding: 0.5rem 0.8rem; border-radius: 8px; }
             .hero h1 { font-size: 1.9rem; }
-            .logo { font-size: 1.2rem; }
-            .logo img { width: 32px; height: 32px; }
+            .logo { font-size: 1.4rem; } /* Adjusted font-size for mobile balance */
+            .logo img { width: 60px; height: 60px; } /* Scaled down but still prominent on mobile */
         }
     </style>
 </head>
