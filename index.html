@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThoughtsMagic Trading - Your Path to Profitable Forex Trading</title>
-    <meta name="description" content="Discover expert trading insights, strategies, and signals from ThoughtsMagic Trading. Inspired by our Instagram community.">
-    <!-- Favicon (replace with your logo) -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TMT - Thoughts Magic Trading | Central India’s Leading Trading Academy</title>
+    <meta name="description" content="TMT - Thoughts Magic Trading. Central India’s Leading Trading Academy. Founded by @ohhh_yassshhh. Insights and updates sourced from our Instagram community @thoughtsmagictrading." />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+
     <style>
         /* Reset and Base Styles */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Ubuntu, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f4f7fa;
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        
+
+        /* Announcement Bar */
+        .announcement {
+            background: #0f213e;
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            font-size: 0.98rem;
+        }
+        .announcement .inner {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1.2fr;
+            gap: 12px;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .announcement a { color: #ffd166; text-decoration: none; }
+        .announcement a:hover { text-decoration: underline; }
+        .phones { text-align: right; }
+        @media (max-width: 900px) {
+            .announcement .inner { grid-template-columns: 1fr; text-align: center; }
+            .phones { text-align: center; }
+        }
+
         /* Header */
         header {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
@@ -26,97 +48,112 @@
             position: sticky; top: 0; z-index: 100;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        nav {
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .logo { font-size: 1.8rem; font-weight: bold; }
-        .nav-links {
-            display: flex; list-style: none; gap: 2rem;
-        }
-        .nav-links a {
-            color: white; text-decoration: none; transition: opacity 0.3s;
-        }
-        .nav-links a:hover { opacity: 0.8; }
-        .mobile-menu { display: none; } /* For mobile responsiveness */
-        
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.3px; display: flex; align-items: center; gap: 10px; }
+        .logo img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+        .badge { background: rgba(255,255,255,0.15); padding: 2px 8px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; transition: opacity 0.3s; }
+        .nav-links a:hover { opacity: 0.85; }
+        .mobile-menu { display: none; color: #fff; cursor: pointer; }
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(30,60,114,0.8), rgba(42,82,152,0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="20" fill="url(%23grid)"/></svg>');
-            color: white; text-align: center; padding: 4rem 0;
+            background: linear-gradient(rgba(30,60,114,0.85), rgba(42,82,152,0.85)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="0.5"/></pattern></defs><rect width="100" height="20" fill="url(%23grid)"/></svg>');
+            color: white; text-align: center; padding: 3.8rem 0 3.2rem;
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .hero h1 { font-size: 2.4rem; margin-bottom: 0.6rem; }
+        .hero p { font-size: 1.1rem; margin: 0 auto 1.6rem; max-width: 760px; }
         .cta-button {
-            display: inline-block; background: #ff6b35; color: white; padding: 1rem 2rem;
-            text-decoration: none; border-radius: 5px; transition: background 0.3s;
+            display: inline-block; background: #ff6b35; color: white; padding: 0.9rem 1.4rem;
+            text-decoration: none; border-radius: 8px; transition: background 0.25s;
+            font-weight: 700;
         }
         .cta-button:hover { background: #e55a2b; }
-        
+        .hero-kicker { margin-top: 10px; color: #e6eefb; opacity: 0.95; }
+
         /* Sections */
         section { padding: 3rem 0; }
-        .about, .insights, .services {
-            background: white; margin: 2rem 0; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        section h2 {
-            text-align: center; margin-bottom: 2rem; color: #1e3c72; font-size: 2.5rem;
-        }
-        .about p { text-align: center; max-width: 800px; margin: 0 auto 1.5rem; font-size: 1.1rem; }
-        
-        /* Insights Section - Instagram Integration */
+        .cardish { background: #fff; margin: 2rem 0; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+
+        section h2 { text-align: center; margin-bottom: 1.6rem; color: #1e3c72; font-size: 2rem; }
+        .about p { text-align: center; max-width: 900px; margin: 0 auto 1rem; font-size: 1.06rem; color: #3a3a3a; }
+
+        /* Insights */
         .insights-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem;
+            padding: 0 10px 10px;
         }
         .insight-card {
-            background: #f8f9fa; border-radius: 10px; padding: 1.5rem; text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.3s;
+            background: #f9fbff; border-radius: 12px; padding: 1.2rem; text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05); transition: transform 0.25s ease;
         }
-        .insight-card:hover { transform: translateY(-5px); }
-        .insight-card img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 1rem; }
-        .insight-card h3 { color: #1e3c72; margin-bottom: 0.5rem; }
-        .insight-card p { color: #666; }
-        
+        .insight-card:hover { transform: translateY(-4px); }
+        .insight-card img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 0.8rem; }
+        .insight-card h3 { color: #1e3c72; margin-bottom: 0.4rem; font-size: 1.1rem; }
+        .insight-card p { color: #4d5b6a; font-size: 0.98rem; }
+
         /* Instagram Embed */
-        .instagram-embed {
-            margin: 2rem 0; text-align: center;
-        }
-        .instagram-embed blockquote {
-            margin: 1rem 0 !important; max-width: 100%;
-        }
-        
+        .instagram-embed { margin: 2rem 0; text-align: center; }
+        .instagram-embed blockquote { margin: 1rem auto !important; max-width: 100%; }
+
         /* Services */
         .services-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem;
+            padding: 0 10px 10px;
         }
-        .service-card {
-            text-align: center; padding: 2rem; background: #f8f9fa; border-radius: 10px;
-        }
-        .service-card h3 { color: #1e3c72; margin-bottom: 1rem; }
-        
+        .service-card { text-align: center; padding: 1.6rem; background: #f8f9fa; border-radius: 12px; }
+        .service-card h3 { color: #1e3c72; margin-bottom: 0.6rem; }
+
+        /* Contact */
+        .contact-ways { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 900px; margin: 0 auto; }
+        .contact-card { background: #fff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); padding: 16px 18px; }
+        .contact-card h3 { color: #1e3c72; margin-bottom: 8px; }
+        .contact-list { list-style: none; padding-left: 0; }
+        .contact-list li { margin: 6px 0; }
+        .contact-list a { color: #1e3c72; text-decoration: none; font-weight: 600; }
+        .contact-list a:hover { text-decoration: underline; }
+        @media (max-width: 820px) { .contact-ways { grid-template-columns: 1fr; } }
+
         /* Footer */
         footer {
             background: #1e3c72; color: white; text-align: center; padding: 2rem 0;
+            margin-top: 18px;
         }
         .footer-links { margin-bottom: 1rem; }
         .footer-links a { color: white; text-decoration: none; margin: 0 1rem; }
-        .disclaimer {
-            font-size: 0.9rem; color: #ccc; max-width: 800px; margin: 0 auto;
-            line-height: 1.5;
-        }
-        
-        /* Responsive */
+        .footer-links a:hover { text-decoration: underline; }
+        .disclaimer { font-size: 0.9rem; color: #d8e2fb; max-width: 900px; margin: 0 auto; line-height: 1.55; }
+
+        /* Responsive nav */
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .mobile-menu { display: block; background: #2a5298; padding: 1rem; }
-            .hero h1 { font-size: 2rem; }
-            .insights-grid, .services-grid { grid-template-columns: 1fr; }
+            .mobile-menu { display: block; background: #2a5298; padding: 0.5rem 0.8rem; border-radius: 8px; }
+            .hero h1 { font-size: 1.9rem; }
+            .logo { font-size: 1.2rem; }
+            .logo img { width: 32px; height: 32px; }
         }
     </style>
 </head>
 <body>
+    <!-- Announcement Bar with your requested lines -->
+    <div class="announcement" role="region" aria-label="Company announcement">
+        <div class="inner container">
+            <div><strong>TMT - Thoughts Magic Trading</strong></div>
+            <div>📈 Central India’s Leading Trading Academy • 🚀 Founded by <a href="https://www.instagram.com/ohhh_yassshhh/" target="_blank" rel="noopener">@ohhh_yassshhh</a></div>
+            <div class="phones">📞 Contact Us: <a href="tel:+918669665071">8669665071</a> | <a href="tel:+919922335767">9922335767</a> | <a href="tel:+918669665070">8669665070</a> | <a href="tel:+917020010598">7020010598</a></div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header>
-        <nav class="container">
-            <div class="logo">ThoughtsMagic Trading</div>
+        <nav class="container" aria-label="Main navigation">
+            <div class="logo">
+                <img src="photo.png" alt="TMT - Thoughts Magic Trading Logo" />
+                TMT - Thoughts Magic Trading
+                <span class="badge">Since 2025</span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -124,7 +161,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="mobile-menu">☰ Menu</div> <!-- Simple mobile toggle placeholder -->
+            <div class="mobile-menu" aria-label="Open Menu">☰ Menu</div>
         </nav>
     </header>
 
@@ -132,99 +169,120 @@
     <section id="home" class="hero">
         <div class="container">
             <h1>Unlock the Magic of Trading</h1>
-            <p>Join our community for expert forex strategies, real-time signals, and mindset tips that turn thoughts into profits. Inspired by daily insights from @thoughtsmagictrading on Instagram.</p>
+            <p>Central India’s Leading Trading Academy. Founded by <a href="https://www.instagram.com/ohhh_yassshhh/" target="_blank" rel="noopener" style="color:#ffd166; font-weight:700;">@ohhh_yassshhh</a>. Curated insights and education sourced from our Instagram community <a href="https://www.instagram.com/thoughtsmagictrading/?hl=en" target="_blank" rel="noopener" style="color:#ffd166; font-weight:700;">@thoughtsmagictrading</a>.</p>
             <a href="#insights" class="cta-button">Explore Trading Insights</a>
+            <div class="hero-kicker">📞 <a href="tel:+918669665071" style="color:#fff;text-decoration:underline;">8669665071</a> | <a href="tel:+919922335767" style="color:#fff;text-decoration:underline;">9922335767</a> | <a href="tel:+918669665070" style="color:#fff;text-decoration:underline;">8669665070</a> | <a href="tel:+917020010598" style="color:#fff;text-decoration:underline;">7020010598</a></div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about cardish">
         <div class="container">
-            <h2>About ThoughtsMagic Trading</h2>
-            <p>We are a dedicated trading company focused on empowering traders with actionable knowledge and tools. Drawing from the vibrant community on our Instagram @thoughtsmagictrading, we share proven strategies in forex, mindset mastery, and risk management to help you navigate the markets confidently.</p>
-            <p>Whether you're a beginner or seasoned trader, our content is designed to inspire and educate, turning magical thoughts into real trading success.</p>
+            <h2>About TMT - Thoughts Magic Trading</h2>
+            <p>We are Central India’s Leading Trading Academy focused on empowering traders with actionable knowledge and tools. Drawing from the vibrant community on our Instagram <a href="https://www.instagram.com/thoughtsmagictrading/?hl=en" target="_blank" rel="noopener">@thoughtsmagictrading</a>, we share strategies in forex, mindset mastery, and risk management to help you navigate the markets confidently.</p>
+            <p>Founded by <a href="https://www.instagram.com/ohhh_yassshhh/" target="_blank" rel="noopener">@ohhh_yassshhh</a>, TMT blends education, community, and disciplined execution to turn magical thoughts into real trading success.</p>
         </div>
     </section>
 
     <!-- Insights Section - Content from Instagram -->
-    <section id="insights" class="insights">
+    <section id="insights" class="insights cardish">
         <div class="container">
             <h2>Trading Insights from @thoughtsmagictrading</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: #666;">Curated tips, signals, and motivational content straight from our Instagram feed. Follow <a href="https://www.instagram.com/thoughtsmagictrading/?hl=en" target="_blank" style="color: #1e3c72;">@thoughtsmagictrading</a> for daily updates.</p>
-            
+            <p style="text-align: center; margin-bottom: 1.2rem; color: #576074;">Curated tips, signals, and motivational content straight from our Instagram feed. Follow <a href="https://www.instagram.com/thoughtsmagictrading/?hl=en" target="_blank" style="color: #1e3c72; font-weight:700;">@thoughtsmagictrading</a> for daily updates.</p>
+
             <div class="insights-grid">
-                <!-- Example Card 1: Inspired by typical IG trading tip (replace image with actual if available) -->
+                <!-- Example Cards (replace with your images/text if desired) -->
                 <div class="insight-card">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23f0f0f0'/><text x='150' y='100' font-size='16' text-anchor='middle' fill='%23666'>Trading Tip: Risk Only 1% Per Trade</text></svg>" alt="Risk Management Tip">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23f0f4ff'/><text x='150' y='100' font-size='15' text-anchor='middle' fill='%231e3c72'>Risk only 1% per trade</text></svg>" alt="Risk Management Tip">
                     <h3>Risk Management Mastery</h3>
-                    <p>Always risk no more than 1% of your capital per trade. This simple rule from our IG stories protects your account and builds long-term success. #ForexTips</p>
+                    <p>Risk no more than 1% of capital per trade. This simple constraint protects your account and compounds consistency.</p>
                 </div>
-                
-                <!-- Example Card 2: Motivational Quote -->
                 <div class="insight-card">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23e3f2fd'/><text x='150' y='100' font-size='16' text-anchor='middle' fill='%231e3c72'>Your Mindset Shapes Your Trades</text></svg>" alt="Mindset Quote">
-                    <h3>Mindset is Everything</h3>
-                    <p>"Thoughts become things in trading." Cultivate a positive mindset to spot opportunities others miss. Featured in our latest Reel.</p>
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23fff3e0'/><text x='150' y='100' font-size='15' text-anchor='middle' fill='%23f57c00'>Your mindset shapes your trades</text></svg>" alt="Mindset Quote">
+                    <h3>Mindset Is Everything</h3>
+                    <p>“Thoughts become things.” Train your focus and patience to spot higher‑probability setups.</p>
                 </div>
-                
-                <!-- Example Card 3: Signal Example -->
                 <div class="insight-card">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23fff3e0'/><text x='150' y='100' font-size='16' text-anchor='middle' fill='%23f57c00'>EUR/USD Buy Signal</text></svg>" alt="Market Signal">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23e3f2fd'/><text x='150' y='100' font-size='15' text-anchor='middle' fill='%231e3c72'>EUR/USD bullish bias</text></svg>" alt="Market Signal Example">
                     <h3>Live Market Signals</h3>
-                    <p>EUR/USD showing bullish momentum—buy at 1.0850, target 1.0920. Check our IG for real-time updates and analysis.</p>
+                    <p>Example: EUR/USD bullish momentum with clear risk parameters. See our IG posts for real‑time updates.</p>
                 </div>
             </div>
-            
-            <!-- Instagram Embed: Replace [POST_ID] with an actual post shortcode from the IG page (e.g., from a recent post URL like /p/ABC123/) -->
+
+            <!-- Instagram Embeds: replace POST_URL_X with real post URLs from @thoughtsmagictrading -->
             <div class="instagram-embed">
                 <h3>Latest from Instagram</h3>
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/[POST_ID]/?hl=en" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-                </blockquote>
+
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/POST_URL_1/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px auto; max-width:540px; min-width:326px; padding:0; width:calc(100% - 2px);"></blockquote>
+
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/POST_URL_2/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px auto; max-width:540px; min-width:326px; padding:0; width:calc(100% - 2px);"></blockquote>
+
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/POST_URL_3/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px auto; max-width:540px; min-width:326px; padding:0; width:calc(100% - 2px);"></blockquote>
+
                 <script async src="//www.instagram.com/embed.js"></script>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="services" class="services cardish">
         <div class="container">
             <h2>Our Trading Services</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <h3>Forex Signals</h3>
-                    <p>Real-time buy/sell alerts based on technical analysis, shared via our Instagram and exclusive channels.</p>
+                    <p>Buy/sell alerts with defined entries, stops, and targets. Shared via our Instagram and private channels.</p>
                 </div>
                 <div class="service-card">
                     <h3>Education & Webinars</h3>
-                    <p>Learn trading fundamentals, strategies, and psychology from our IG-inspired courses.</p>
+                    <p>From market structure to psychology—programs inspired by our IG lessons.</p>
                 </div>
                 <div class="service-card">
                     <h3>Consulting</h3>
-                    <p>Personalized advice to optimize your portfolio and risk management.</p>
+                    <p>1:1 guidance to refine your strategy, risk, and execution.</p>
                 </div>
                 <div class="service-card">
                     <h3>Community Access</h3>
-                    <p>Join our growing Instagram community for discussions, tips, and live Q&A.</p>
+                    <p>Join live Q&A, discussions, and weekly recaps with the TMT community.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" class="cardish">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem; color: #1e3c72;">Get in Touch</h2>
-            <p style="text-align: center; color: #666;">Follow us on Instagram for daily updates or email us at info@thoughtsmagictrading.com.</p>
-            <div style="text-align: center; margin-top: 1rem;">
-                <a href="https://www.instagram.com/thoughtsmagictrading/?hl=en" target="_blank" class="cta-button">Follow on Instagram</a>
+            <h2>Get in Touch</h2>
+            <div class="contact-ways">
+                <div class="contact-card">
+                    <h3>Call Us</h3>
+                    <ul class="contact-list" aria-label="Phone numbers">
+                        <li>📞 <a href="tel:+918669665071">8669665071</a></li>
+                        <li>📞 <a href="tel:+919922335767">9922335767</a></li>
+                        <li>📞 <a href="tel:+918669665070">8669665070</a></li>
+                        <li>📞 <a href="tel:+917020010598">7020010598</a></li>
+                    </ul>
+                </div>
+                <div class="contact-card">
+                    <h3>Online</h3>
+                    <ul class="contact-list">
+                        <li>Instagram: <a href="https://www.instagram.com/thoughtsmagictrading/?hl=en" target="_blank" rel="noopener">@thoughtsmagictrading</a></li>
+                        <li>Founder: <a href="https://www.instagram.com/ohhh_yassshhh/" target="_blank" rel="noopener">@ohhh_yassshhh</a></li>
+                        <li>Email: <a href="mailto:info@thoughtsmagictrading.com">info@thoughtsmagictrading.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top: 1.2rem;">
+                <a href="https://www.instagram.com/thoughtsmagictrading/?hl=en" target="_blank" class="cta-button" rel="noopener">Follow on Instagram</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
-            <div class="footer-links">
+            <div class="footer-links" aria-label="Footer navigation">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#insights">Insights</a>
@@ -232,31 +290,50 @@
                 <a href="#contact">Contact</a>
             </div>
             <div class="disclaimer">
-                <p>© 2025 ThoughtsMagic Trading. All rights reserved.</p>
-                <p>Trading involves substantial risk of loss and is not suitable for all investors. Past performance is not indicative of future results. Content inspired by @thoughtsmagictrading on Instagram is for educational purposes only. Consult a financial advisor before trading. We comply with relevant regulations; this site does not provide financial advice.</p>
+                <p>© <span id="year"></span> TMT - Thoughts Magic Trading. All rights reserved.</p>
+                <p>Risk Disclosure: Trading involves substantial risk of loss and is not suitable for all investors. Past performance is not indicative of future results. Content is for educational purposes only and is sourced via Instagram embeds from @thoughtsmagictrading.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Simple smooth scrolling for navigation links
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Smooth scrolling for internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const id = this.getAttribute('href');
+                if (id.length > 1 && document.querySelector(id)) {
+                    e.preventDefault();
+                    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
 
-        // Mobile menu toggle (basic)
+        // Mobile menu toggle
         const mobileMenu = document.querySelector('.mobile-menu');
         const navLinks = document.querySelector('.nav-links');
-        if (mobileMenu) {
+        if (mobileMenu && navLinks) {
             mobileMenu.addEventListener('click', () => {
-                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                const shown = getComputedStyle(navLinks).display !== 'none';
+                navLinks.style.display = shown ? 'none' : 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.gap = '1rem';
             });
         }
+
+        // Ensure Instagram embeds render (if script loads after DOM)
+        window.addEventListener('load', function () {
+            if (window.instgrm && window.instgrm.Embeds && typeof window.instgrm.Embeds.process === 'function') {
+                window.instgrm.Embeds.process();
+            }
+        });
     </script>
+
+    <!-- Instagram’s official embed script -->
+    <script async src="//www.instagram.com/embed.js"></script>
+
+    <noscript>Please enable JavaScript to view embedded Instagram posts.</noscript>
 </body>
 </html>
